@@ -2,7 +2,7 @@ import pytest
 import src.exercise
 
 def test_exercise():
-    input_values = ["one two three","this is a message"]
+    input_values = ["one two three","this is a message",""]
     output = []
 
     def mock_input(s=None):
@@ -18,9 +18,4 @@ def test_exercise():
 
     src.exercise.main()
 
-    src.exercise.input = mock_input
-    src.exercise.print = lambda s : output.append(s)
-
-    src.exercise.main()
-
-    assert output == ["","one","","this"]
+    assert output == ["","one","","this",""]
